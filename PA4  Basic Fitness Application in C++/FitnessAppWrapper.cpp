@@ -43,7 +43,7 @@ void FitnessAppWrapper::runApp()
 			}
 			else
 			{
-				cout << "Something went wrong opening this text file, check your code dumbass" << endl;
+				cout << "Something went wrong opening this text file, check your code dumbass" << endl; //if this causes me to lose points I'm sorry haha
 			}
 			system("pause");
 			break;
