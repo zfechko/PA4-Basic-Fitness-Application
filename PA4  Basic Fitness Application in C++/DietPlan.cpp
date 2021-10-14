@@ -70,6 +70,17 @@ string DietPlan::getDate()
 	return Date;
 }
 
+/* * * * * * * * * * * * * * *
+Function Name:editGoalCalories
+Date Created: 10.9
+Date Last Modfied: 10.12
+Description of Function: prompts the user for a new calorie goal and then uses a setter
+to set it to the private calorie data member
+Input parameters: none
+Returns: nothing
+Preconditions: user has to have chosen a position in the vector to edit
+Postconditions: The data member will be overwritten with new data
+* * * * * * * * * * * * * * */
 void DietPlan::editGoalCalories()
 {
 	int userGoal = 0;

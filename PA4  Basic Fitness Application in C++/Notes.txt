@@ -1,6 +1,7 @@
 THINGS LEFT TO DO WITH THIS ASSIGNMENT
-- Adapt functions to work with the vectors being private data members
-- Ask about an alternative to system("pause") because Connor will be grading on mac
+- Adapt functions to work with the vectors being private data members (DONE)
+- Ask about an alternative to system("pause") because Connor will be grading on mac (DONE)
 - Finish edit functions (DONE)
 - Figure out why when I save diet plan it displays the info (DONE)
 - Figure out why when storing diet plan it just deletes everything (DONE)
+- Add some personality to the text files instead of just monday tuesday etc.

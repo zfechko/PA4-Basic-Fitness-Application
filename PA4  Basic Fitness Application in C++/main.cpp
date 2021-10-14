@@ -3,7 +3,7 @@ Name: Zach Fechko
 Class: Cpts 122; Lab Section 6
 Programming Assignment: PA4 Basic Fitness Application in C++
 Date Due: Wednesday 10.13
-Description:
+Description: Reading and processing data to list objects
 * * * * * * * * * * * * * * * * * * * * * * */
 
 #include "DietPlan.h"

@@ -174,7 +174,7 @@ void FitnessAppWrapper::runApp()
 			*/
 			system("cls");
 
-			if (!exercise.empty()) //if the vector isn't empty
+			if (!exercise.empty()) //if the vector has content, we need to save it
 			{
 				exerciseTxt.open("ExercisePlan.txt", std::ios::out);
 				storeWeeklyPlan(exerciseTxt, exercise); //we save the plan
@@ -182,7 +182,7 @@ void FitnessAppWrapper::runApp()
 				exerciseTxt.close();
 			}
 
-			if (!diet.empty())
+			if (!diet.empty()) //if the vector has content, we need to save
 			{
 				dietTxt.open("DietPlan.txt", std::ios::out);
 				storeWeeklyPlan(dietTxt, diet); //we save the plan
@@ -205,9 +205,9 @@ void FitnessAppWrapper::runApp()
 /* * * * * * * * * * * * * * *
 Function Name: loadDailyPlan
 Date Created: 10.3
-Date Last Modfied: 10.8
+Date Last Modfied: 10.12
 Description of Function: This function reads in a day's worth of plan info and pushes it into a vector
-Input parameters: A reference to an infile(fstream), and a vector
+Input parameters: A reference to an infile(fstream), and a reference to a plan object (like a vector)
 Returns: nothing it's void
 Preconditions: file has to be open
 Postconditions: vector will be populated with one day's worth of plans
@@ -285,7 +285,7 @@ Postconditions:
 * * * * * * * * * * * * * * */
 void FitnessAppWrapper::displayWeeklyPlan(vector<DietPlan>& d)
 {
-	for (int i = 0; i < 6; ++i)
+	for (int i = 0; i < 7; ++i) 
 	{
 		displayDailyPlan(d, i);
 	}
@@ -293,7 +293,7 @@ void FitnessAppWrapper::displayWeeklyPlan(vector<DietPlan>& d)
 
 void FitnessAppWrapper::displayWeeklyPlan(vector<ExercisePlan>& e)
 {
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < 7; i++)
 	{
 		displayDailyPlan(e, i);
 	}
@@ -409,7 +409,7 @@ int FitnessAppWrapper::chooseDailyPlan(vector<DietPlan>& d)
 		cout << i + 1 << ". " << d.at(i).getPlanName() << endl;
 	}
 	cin >> choice;
-	while (choice < 0 || choice > 8)
+	while (choice < 0 || choice > 8) //if the choice is less than 0 or greater than 8 (invalid value)
 	{
 		cout << "gotta pick a valid number buddy" << endl;
 		cin >> choice;

@@ -69,6 +69,30 @@ string ExercisePlan::getDate()
 	return Date;
 }
 
+/* * * * * * * * * * * * * * *
+Function Name:editGoalSteps
+Date Created: 10.9
+Date Last Modfied: 10.12
+Description of Function: prompts the user for a new step goal and then uses a setter
+to set it to the private calorie data member
+Input parameters: none
+Returns: nothing
+Preconditions: user has to have chosen a position in the vector to edit
+Postconditions: The data member will be overwritten with new data
+* * * * * * * * * * * * * * */
+void ExercisePlan::editGoalSteps()
+{
+	int userGoal = 0;
+	cout << "Enter a new step goal for " << getPlanName() << endl;
+	cin >> userGoal;
+	while (userGoal < 0)
+	{
+		cout << "It's physically impossible for you to walk this much, try again" << endl;
+		cin >> userGoal;
+	}
+	setGoalSteps(userGoal);
+}
+
 /*
 overloaded stream extraction operator for reading the entirety of a plan from the file
 uses a reference to the fstream as the left hand side and a reference to an ExercisePlan object for the right hand side
@@ -115,15 +139,3 @@ fstream& operator<<(fstream& lhs, ExercisePlan& rhs)
 	return lhs;
 }
 
-void ExercisePlan::editGoalSteps()
-{
-	int userGoal = 0;
-	cout << "Enter a new step goal for " << getPlanName() << endl;
-	cin >> userGoal;
-	while (userGoal < 0)
-	{
-		cout << "It's physically impossible for you to walk this much, try again" << endl;
-		cin >> userGoal;
-	}
-	setGoalSteps(userGoal);
-}
